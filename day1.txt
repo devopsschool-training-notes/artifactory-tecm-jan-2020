@@ -227,16 +227,109 @@ art12@devopsschool.com
 65.0.81.32
 centos
 Key - 
+=============================================
+Types of repo in Artifactory?
+-------------------------------------------
+Local		- UPLOAD & Download
+Remote		- Cache copy of Another Repo used for Download only
+Virtual		- Group of Local repo and Remote Repo
 
 
 
+Distribution
+Federated
 
 
 
+==================================================
+==========================================================
+How to Upload & Downlod
+		- Packages
+			Using
+
+	- Maven
+	- Gradle
+	- Docker
+	- Jenkins
+	- Msbuild
+	- Python
+	- NPM
+
+https://www.youtube.com/c/TheDevOpsSchool/playlists
+=====================================================
+How to upload a Pakcage using Maven?
+--------------------------------------------------
+Step 1 - Install JDK 8/11 in your work Machine & JAVA_HOME must be set
+
+$ java --version
+	 
+Step 2 - Install Maven & Add Maven_Home/bin into PATH env
+
+$ mvn --version
+
+Step 3 - Create a repo
+		Local	http://65.0.81.32:8082/artifactory/rajesh-maven/
+	
+		Remote
+		Virtual
+
+Step 4 - Create a Sample Maven project
+
+$ mvn archetype:generate -DgroupId=com.devopsschool.softwar -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+Step 5 - Use Admin Access
+
+admin
+Admin$144556s
+
+Step 6 - Update pom.xml with repo location == CHECK "Set me up"
+
+-------------------------
+Maven 
+	Version TYPE
+	- Release - STABLE CODE Release to the Market	1.0 | 1.1 | 1.1.1
+	- Snapshot - Not Stable code under work.	1.0-SNAPSHOT | 1.1-SNAPSHOT | 1.1.1-SNAPSHOT
+--------------------------
+
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-22-143.ap-south-1.compute.internal-releases</name>
+        <url>http://65.0.81.32:8081/artifactory/rajesh-maven</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-22-143.ap-south-1.compute.internal-snapshots</name>
+        <url>http://65.0.81.32:8081/artifactory/rajesh-maven</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+Step 7 - Update setting.xml with repo access == CHECK "Set me up"
+Location - C:\tools\maven\conf
+
+    <server>
+      <id>central</id>
+      <username>admin</username>
+      <password>Admin$144556s</password>
+    </server>
+
+    <server>
+      <id>snapshots</id>
+      <username>admin</username>
+      <password>Admin$144556s</password>
+    </server>
+
+
+Step 8 - MAKE SURE that "id" of repository/snapshotRepository MUST match with "id" of "server"
+
+
+Step 9 - mvn deploy
 
 
 
-
+Sample - https://github.com/devops-school/helloworld-java-maven
 
 
 
