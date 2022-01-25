@@ -1,0 +1,251 @@
+====================
+Start - 9 AM IST
+End - 2 PM IST
+--------------------
+BREAK TIME - 30 mins @ 11:30 AM IST
+-------------------------
+Demo & Lab === I would give you.
+==================================================================
+
+Artifactory?
+------------------------------
+What is Artifactory?
+------------------------------
+ - Software Packages Management tool
+		How?
+		- using Repository
+AKA - Repo mgmt tool where repo contains packages/artifacts.
+ - From Jfrog
+ - Dev in JAVA
+      - PLATFORM INDEPENDENT
+      - Require JAVA to run
+ - Release
+	- Community	- Free - 
+	- Professional - PAID - 30 Days Trial
+	- Data cent
+	https://www.jfrog.com/confluence/display/JFROG/Artifactory+Comparison+Matrix
+ - Version
+	6.x 7.x
+
+What Packages?
+----------------------
+	SYSTEM Package
+	- Windows 	-> Exe - MSI
+	- Mac		-> DMG	
+	- Linux		-> RPM - DEB
+	- Android	-> APK
+
+	- Container 	-> Docker Images
+
+	APPLICATION
+	- GENERAL	-> zip - tar - bin
+	- JAVA		-> Jar - ear - war
+	- DOTNET	-> exe
+
+
+What Management?
+------------------------
+	Repo
+		- Packages
+	------------------------
+	Versioning of Package
+	Encode a package
+	Encrypt a package
+	
+	Integration
+	- Maven
+	- Gradle
+	- Docker
+	- Jenkins
+	- Msbuild
+	- Python
+	- NPM
+
+What tool?
+	- Saving Cost
+	- Saving time
+		- Download a Pack
+		- Upl a Pack
+	- Impro Productivity
+
+Where in SDLC cycle - this tools stands?
+============================================
+
+PLAN -> Code -> Analyze -> Build -> UT -> Package -> Archive -> Dep2QA -> AT -> Code Coverage -> R
+===================================================================================================
+JIRA -> GIT -> SonarQube -> Maven -> JUnit-> Jar/war -> Artifactory -> Ansible-> Selenium -> Jacoco
+			    Gradle
+			    Ant
+			    NNAT
+			    Makefile
+		            MSbuild
+======================================================================================================
+					Jenkins
+
+======================================
+Other tools
+--------------------------
+Nexus from SonaType
+Archiva from Apache
+=============================================================
+How Artifactory works???
+-----------------------------
+Architecture of Artifactory?
+-----------------------------------------------------
+
+HUMAN ---> ARTIFACTORY 
+	   WEB -----------> DB ------------> DATASTORE
+	---------------------------------------------------
+	  JAVA	 
+			Derby
+			MySQL v5.7 and 8.x
+			Oracle versions v.12.2, v.18, and v.19
+			Microsoft SQL Server 2008 (10.5) and above
+			MariaDB versions 10.2.9-10.4 and version 10.5.9
+			PostSQL
+
+DATASTORE
+============================================
+file-system
+The most basic filestore configuration for Artifactory used for a local or mounted filestore.
+
+cache-fs
+Works the same way as filesystem but also caches download requests that are cleaned up using an LRU (Least Recently Used) protocol. Improves performance of instances with high IOPS (I/O Operations) or slow NFS access.
+
+full-db
+All the metadata and the binaries are stored as blobs in the Artifactory database with an additional layer of caching.
+
+full-db-direct
+All the metadata and the binaries are stored as blobs in the Artifactory database without caching.
+
+s3-storage-v3
+A file store configuration to use S3 Cloud Storage using the official Amazon SDK.
+
+cluster-s3-storage-v3
+A file store configuration where data is temporarily stored on the file system of each node using the Eventual-Cluster Binary Provider , and is then passed on to your S3 object storage for persistent storage
+
+s3-sharding
+A file store configuration to use multiple S3 buckets in a sharded configuration. 
+
+s3
+This is the setting used to store data in S3 using the JetS3t library. 
+
+The JetS3t library is no longer maintained and hence this template will be deprecated in the future.
+
+google-storage
+This is the setting used for Google Cloud Storage as the remote filestore.
+
+azure-blob-storage
+This is the setting used for Azure Blob Storage as the remote filestore.
+double-shards
+
+A pure sharding configuration that uses two physical mounts with one copy, which results in each artifact saved only once.
+
+redundant-shards
+A pure sharding configuration that uses two physical mounts with two copies, which results in each shard storing a copy of each artifact.
+
+cluster-file-system
+A filestore configuration where each node has its own local filestore (just like the file-system chain) and is connected to all other nodes through dynamically allocated Remote Binary Providers using the Sharding-Cluster provider.
+
+cluster-s3
+This is the setting used for Amazon S3 using the JetS3t library. It is based on the sharding and dynamic provider logic that synchronizes the cluster-file-system.
+
+The JetS3t library is no longer maintained and hence this template will be deprecated in the future.
+
+cluster-google-storage
+This is the setting used for Google Cloud Storage using the JetS3t library. It is based on the sharding and dynamic provider logic that synchronizes the cluster-file-system.
+
+The JetS3t library is no longer maintained and hence this template will be deprecated in the future.
+
+cluster-azure-blob-storage
+This is the setting used for Azure Blob Storage. It is based on the sharding and dynamic provider logic that synchronizes the cluster-file-system.
+
+			           
+HUMAN	  8081
+	  8082
+
+==============================
+How to install Artifactory?
+===================================================
+https://www.devopsschool.com/blog/artifactory-install-and-configurations-guide/
+
+SYSTEM Requirement - 
+	---- Uploading a Package
+	---- Download a Package
+	---- Size of Packages
+	---- How freq u store it...
+-----------------------------------
+	8 GB RAM - 2 CPU - 30 GB
+
+
+Download - https://jfrog.com/download-jfrog-platform/
+
+https://releases.jfrog.io/artifactory/artifactory-pro/org/artifactory/pro/jfrog-artifactory-pro/7.31.11/jfrog-artifactory-pro-7.31.11-linux.tar.gz
+
+Method of Installing?
+-----------------------------------
+https://jfrog.com/download-legacy/?product=artifactory&installer=linux
+
+
+65.0.81.32:8081
+
+admin
+password
+
+
+admin
+Admin$144556s
+
+
+How to get an License?
+==================================
+https://jfrog.com/start-free/
+art12@devopsschool.com
+
+
+----------------
+  10  wget https://releases.jfrog.io/artifactory/artifactory-pro/org/artifactory/pro/jfrog-artifactory-pro/7.31.11/jfrog-artifactory-pro-7.31.11-linux.tar.gz
+   11  clear
+   12  ls
+   13  tar -zxvf jfrog-artifactory-pro-7.31.11-linux.tar.gz
+   14  clear
+   15  ls
+   16  cd artifactory-pro-7.31.11
+   17  ls
+   18  yum install java-11-openjdk-devel
+   19  clear
+   20  ls
+   21  cd app/
+   22  ls
+   23  cd bin
+   24  ls
+   25  ./artifactory.sh start
+   26  ./artifactory.sh status
+----------------
+
+
+65.0.81.32
+centos
+Key - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
