@@ -230,3 +230,31 @@ docker tag rajesh 3.110.156.179:8081/rajesh-docker/rajesh
 
 https://www.devopsschool.com/blog/how-to-setup-docker-registry-repository-using-jfrog-artifactory/
 
+==================================================================
+
+How to upload package to Artifactory using jenkins?
+
+https://www.devopsschool.com/blog/complete-tutorial-of-jenkins-installation-and-configuration/
+
+
+
+===============================
+Step 1 - Install Artifactory plugins		DONE
+Step 2 - Configure Artifactory plugins		DONE
+
+Step 3 - Use Artifactory plugins
+
+http://3.110.156.179:8080/
+rajesh
+rajesh123
+
+http://3.110.156.179:8082/artifactory
+
+https://github.com/devops-school/helloworld-java-maven
+https://www.devopsschool.com/blog/how-to-integrate-artifactory-with-jenkins/
+
+
+Using PIPELINE
+----------------
+https://github.com/devopsschool-demo-labs-projects/artifactory-project-example/tree/master/jenkins-examples/pipeline-examples
+
