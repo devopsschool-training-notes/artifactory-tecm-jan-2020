@@ -2,6 +2,7 @@ http://3.110.156.179:8082/
 
 admin
 Admin$144556s
+
 ==============================
 How to Upload Package to Artifactory using Maven?
 - https://www.devopsschool.com/blog/how-to-upload-a-package-using-maven-in-artifactory/
@@ -36,6 +37,54 @@ Group
 
 rajesh
 Admin$144556s
+
+How to Download Package from Artifactory using Maven?
+===============================================================
+
+Proj1 - package in artifactory	= CHAT
+
+Proj2 - package in artifactory  = Mail
+
+=============================
+Cond ------> Chat is dependent on MAIL 2.0
+IN CHAT pom.xml
+
+    <dependency>
+      <groupId>com.devopsschool.softwar</groupId>
+      <artifactId>mail</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+-------------------------------------
+How dependency mgmt works in maven?
+-----------------------------------
+
+mvn -> pom.xml	  ---> Locate in Maven Local Repo
+       (Read Dep)	C:\Users\Rajesh Kumar\.m2\repository
+			
+			---> IF FOUND - Set in Classpath -- Use it.....
+
+
+			---> IF NOT FOUND - try to download from central
+					-- Download from Central to Local 
+						- Set in Classpath -- Use it.....
+
+			
+			TELL MAVEN
+				 Default Central must be replaced with Artifactory repo
+			HOW
+			setting.xml
+			  
+    <mirror>
+      <id>central</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://3.110.156.179:8082/artifactory/rajesh-group/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+
+
+
+https://www.devopsschool.com/blog/how-to-download-a-package-using-maven-from-artifactory/
 
 
 
