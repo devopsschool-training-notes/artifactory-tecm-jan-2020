@@ -1,0 +1,45 @@
+http://3.110.156.179:8082/
+
+admin
+Admin$144556s
+==============================
+How to Upload Package to Artifactory using Maven?
+- https://www.devopsschool.com/blog/how-to-upload-a-package-using-maven-in-artifactory/
+
+How to Download Package from Artifactory using Maven?
+- Local - Release	http://3.110.156.179:8082/artifactory/rajesh-local/
+- Local - Snapshot 	http://3.110.156.179:8082/artifactory/rajesh-local-snapshot/
+- Remote - From - 	http://3.110.156.179:8082/artifactory/rajesh-remote/
+- Virtual 		http://3.110.156.179:8082/artifactory/rajesh-group/
+
+How to upload package to Artifactory using gradle?
+
+How to upload package to Artifactory using docker?
+
+How to upload package to Artifactory using jenkins?
+
+How to upload package to Artifactory using npm?
+==================================================================
+
+
+Authentication and Authorization 
+========================================
+Authentication - How to login to system(Artifactory)
+- User name & Password (Default)
+https://www.jfrog.com/confluence/pages/viewpage.action?pageId=46107964
+
+Authorization - What permission u have after login?
+
+Permission
+User 
+Group
+
+rajesh
+Admin$144556s
+
+
+
+
+
+
+
