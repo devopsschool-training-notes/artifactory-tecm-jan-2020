@@ -86,9 +86,147 @@ mvn -> pom.xml	  ---> Locate in Maven Local Repo
 
 https://www.devopsschool.com/blog/how-to-download-a-package-using-maven-from-artifactory/
 
+==========================================================
+
+How to upload package to Artifactory using gradle?
+
+Step 1 - Install Java and Set JAVA_HOME				DONE
+
+Step 2 - Install Gradle and Set gradle_home/bin into PATH	DONE
+
+Step 3 - Create a Project				DONE
+
+Step 4 - Create a Gradle repo on Artifactory		DONE
+
+Step 5 - Configure Gradle with Artifactory
+
+build.gradle	== pom.xml
+settings.gradle == setting.xml
+
+Refer - https://github.com/devopsschool-demo-labs-projects/artifactory-project-example
+- https://github.com/devopsschool-demo-labs-projects/artifactory-project-example/tree/master/gradle-examples/gradle-example
+
+Step 6 - gradle task....
+
+- http://3.110.156.179:8082/artifactory/rajesh-gradle-virtual/
+- http://3.110.156.179:8082/artifactory/rajesh-gradle/
 
 
 
 
 
+
+----------------------
+makefile -> Ant -> Maven -> Gradle
+                           ----------------
+			   - Declarative - Like ANT
+			   - Procedural - Like Maven
+			   -------------------------------
+			  JAVA - 
+
+
+
+
+Gradle has no in built DEPENDENCY mgmt fea...
+	--- Uses Maven - IVY
+
+
+
+How to upload package to Artifactory using docker?
+===================================================
+
+Step 1 - Write a dockerfile
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar rajesh@devopsschool.com
+RUN touch /tmp/raju.txt
+
+
+Step 2 - create a image
+
+$ docker build -t rajesh .
+$ docker build -t rajesh -f filename .
+
+
+Step 3 - Create a docker repo at artifactory		DONE
+
+Step 4 - Config Artifactory for Docker Repo		DONE
+
+
+Step 5 - docker login url				DONE
+
+Step 6 - Make sure ur docker image Name === artifactory repo name 
+Step 7 - docker push
+Step 8 - Docker pull
+===============================================
+What is Docker hub?
+-------------------------
+
+Registry		Repository 		file-system
+------------------------------------------------------------------
+github			Repository 		Verioning of fileSYSTEm
+docker hub		ubuntu			Verioning of fileSYSTEM	
+gitlab
+bitbucket
+Artifactory		
+
+rajesh-docker
+
+--------
+For Art - Its repos
+For Docker - Its Registry
+
+
+docker images === docker repository
+=================================
+ROOT FS + USER + APP FS
+
+
+
+PATH 
+docker pull / push <Artifactory Host IP Address>:8082/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+docker login -u <USER_NAME> -p <USER_PASSWORD> <Artifactory Host IP Address>:8082
+
+PORT
+docker pull / push 3.110.156.179:<REPOSITORY_PORT>/<IMAGE>:<TAG>
+docker login -u <USER_NAME> -p <USER_PASSWORD> 3.110.156.179:<REPOSITORY_PORT>
+
+
+HUMAN - image1.devopsschool.com
+image2.devopsschool.com
+		DNS Server
+
+PATH - https://hub.docker.com/_/ubuntu
+PORT - https://hub.docker.com:6000/_/ubuntu1
+PORT - https://hub.docker.com:6001/_/ubuntu2
+DOMAIN - https://ubuntu.docker.com
+			
+human --> docker client --> http://3.110.156.179:8082/
+
+---In case of PATH BASED
+{
+"insecure-registries" : ["3.110.156.179:8081"]
+}
+
+---In case of PORT BASED
+{
+"insecure-registries" : ["3.110.156.179:PORT"]
+}
+
+=====================
+docker login 
+
+$ docker login -u admin -p 'Admin$144556s' 3.110.156.179:8081
+
+
+$ docker pull 13.232.91.6:8081/rajesh-docker/rajesh
+
+
+$ docker push 13.232.91.6:8081/REPO-KEY/<IMAGE>:<TAG>
+$ docker push 13.232.91.6:8081/rajesh/xyz
+$ docker pull 13.232.91.6:8081/rajesh/<IMAGE>:<TAG>
+
+docker tag rajesh 3.110.156.179:8081/rajesh-docker/rajesh
+
+https://www.devopsschool.com/blog/how-to-setup-docker-registry-repository-using-jfrog-artifactory/
 
