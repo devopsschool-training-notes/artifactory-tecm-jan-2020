@@ -1,0 +1,58 @@
+Database Migration 
+		From Derby to MySql
+		====================
+		From Derby to Postgre
+		====================
+https://www.devopsschool.com/blog/how-to-migrate-artiafactory-derby-database-to-mysql-database/
+
+Step 1 – Check mysql version supported by artiafactory 7.x
+
+Artifactory supports PostgreSQL version 13.x 
+https://www.jfrog.com/confluence/display/JFROG/PostgreSQL
+
+Step 2 - Take a full import of System
+
+Step 3  -  - Setup a mysql server, database and permission
+
+$ docker run --name postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:13.5
+
+The default postgres user
+
+User - postgres
+Database - postgres
+Password - mysecretpassword
+Port - 5432
+Host - 172.17.0.2
+
+
+docker run --name mysql8 -v /tmp/database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=artifactory -e MYSQL_USER=artifactory -e MYSQL_PASSWORD=artifact123 -d mysql
+
+Step 4 – Stop artiafactory server
+
+
+## Example for postgresql
+type: postgresql
+driver: org.postgresql.Driver
+url: "jdbc:postgresql://172.17.0.2:5432/postgres"
+username: postgres
+password: mysecretpassword
+
+
+172.17.0.2:5432/postgres
+
+
+postgresql JDBC drive
+
+PGPASSWORD=mysecretpassword psql -U postgres postgres
+
+
+
+
+
+How to migrate artiafactory derby database to mysql database?
+
+
+
+
+
+
